@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>황인욱</title>
+	<div class="layer">
+
+	</div>
+	<!-- <hr width:100%> -->
+
+	<!-----------------------------------------자바스크립트영역----------------------------------------->
+	<script language="javascript">
+		function checkAll() {
+			//		alert("test");
+
+			if (document.frm.userId.value == "") {
+				alert("ID를 입력하세요");
+				document.frm.userId.focus();
+				return;
+			} else if (document.frm.userPwd.value == "") {
+				alert("비밀번호를 입력하세요");
+				document.frm.userPwd.focus();
+				return;
+			} else if (document.frm.userPwd2.value != document.frm.userPwd.value) {
+				alert("비밀번호가 일치하지 않습니다");
+				document.frm.userPwd2.focus();
+				return;
+			} else if (document.frm.userName.value == "") {
+				alert("이름을 입력하세요");
+				document.frm.userName.focus();
+				return;
+			} else if (document.frm.hobby.value == "") {
+				alert("취미를 하나 이상 선택해주세요");
+				document.frm.hobby.focus();
+				return;
+			}
+			return;
+		}
+
+
+
+	</script>
+
+
+	<!----------------------------------------CSS영역(style sheet)-------------------------------------->
+	<style>
+		h1 {
+			color: #6da0f2
+		}
+
+		.frm {
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 50px;
+			width: 300px;
+			text-align: center;
+		}
+
+		/* #tb1 {
+			border: 0px transparent;
+			text-align: center;
+		} */
+
+		/* .sex {
+			width: 100px;
+			text-align: right;
+			position: absolute;
+			right: 120px;
+		} */
+
+		.sex {
+			width: 20px;
+		}
+
+
+
+		/* 
+		.userName {
+			border: transparent;
+			width: 300px;
+		} */
+
+		.col2 {
+			border: transparent;
+			width: 300px;
+
+			padding-left: 0;
+			padding-top: 0;
+			padding-right: 0;
+			padding-bottom: 0;
+
+		}
+
+		.check {
+			width: 10px;
+		}
+
+		input {
+			width: 300px;
+		}
+	</style>
+
+	<!-------------------------------------------본문영역----------------------------------------------->
+
+</head>
+
+<body>
+
+	<h1 align="center" style="margin-top: 50px;" color="#6da0f2;">◆ ◈ 회원가입 ◈ ◆</h1>
+	<form class="frm" method="post" action="memberJoinInputOK.jsp">
+		<table style="height: 300px;">
+			<tr>
+				<!--     <td class="col">ID *</td> -->
+				<td class="col2">
+					<input type="text" name="userId" placeholder="ID"></td>
+
+			</tr>
+
+			<tr>
+				<!--     <td class="col">비밀번호 *</td> -->
+				<td class="col2">
+					<input type="password" name="userPwd" placeholder="비밀번호"></td>
+			</tr>
+
+			<tr>
+				<!--     <td class="col">비밀번호확인 *</td> -->
+				<td class="col2">
+					<input type="text" name="userPwd2" placeholder="비밀번호 확인"></td>
+			</tr>
+			<tr width="200px">
+				<!--     <td class="col">이름 *</td> -->
+				<td class="userInfo" align="left">
+					<input type="text" name="userName" placeholder="이름" style="width:200px">
+
+					<input type="radio" name="sex" value="남자" class="sex" checked>♂
+
+					<input type="radio" name="sex" value="여자" class="sex">♀
+
+				</td>
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<!--     <td class="col">생년월일</td> -->
+				<td class="col2">
+					<!--<input type="text" name="userBirth" size="20">
+    <select name="userBirth">
+    <option value="1990">1990</option>
+    <option value="1991">1991</option>
+    <option value="1992">1992</option>
+    </select>
+    <select name="userBirth2">
+    <option value="Jan">Jan</option>
+    <option value="Feb">Feb</option>
+    <option value="Mar">Mar</option>
+    </select>
+    <select name="userBirth3">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    </select>-->
+					<input type="date" name="userBirth">
+
+				</td>
+			</tr>
+
+			<tr>
+				<!--     <td class="col">E-mail</td> -->
+				<td class="col2">
+					<input type="email" name="userEmail" placeholder="E-mail"></td>
+			</tr>
+
+			<tr>
+				<!--     <td class="col">주소</td> -->
+				<td class="col2">
+					<input type="text" name="userAdrs" placeholder="주소" autocomplete="on" autofocus></td>
+			</tr>
+
+			<!-- <tr>
+    <td class="col">성별 *</td>
+	    <td class="col2">
+    <input type="radio" name="sex" value="남자" checked>남자
+	<input type="radio" name="sex" value="여자">여자</td>
+</tr> -->
+
+			<tr>
+				<!--     <td class="col">취미</td> -->
+				<td>
+					<input type="checkbox" class="check" name="hobby" value="야구" checked>야구
+					<input type="checkbox" class="check" name="hobby" value="배구">배구
+					<input type="checkbox" class="check" name="hobby" value="축구">축구
+					<input type="checkbox" class="check" name="hobby" value="피구">피구
+					<input type="checkbox" class="check" name="hobby" value="농구">농구</td>
+			</tr>
+		</table>
+
+
+
+
+	</form>
+	<table align="center">
+		<tr>
+			<td>
+				<input type="button" name="submit" value="확인" onclick="checkAll();"
+					style="width:60px; height:30px; border: 0px transparent; border-radius: 20px; background-color:#6da0f2;">
+			</td>
+			<td>
+				<input type="reset" name="reset" value="취소"
+					style="width:60px; height:30px; border: 0px transparent; border-radius: 20px; background-color:#6da0f2;">
+			</td>
+
+		</tr>
+
+	</table>
+</body>
+
+</html>
